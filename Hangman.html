@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Hangwoman</title>
+    <script src= "Hangman.js"></script>
+    <style type="text/css">
+
+      canvas { 
+        position: absolute;
+        top: 75px;
+        left: 50px;
+        }
+      h1 {
+        text-align: center;
+        text-decoration: underline;
+        margin-bottom: 0px;
+      }
+      table {
+        margin-left: 10px;
+        margin-right: 300px;
+      }
+      #table1 {
+        display: block;
+        width: 600px;
+      }
+      #table1 td {
+        display: inline-block;
+      }
+      #tableContainer1 {
+        display: table;
+        position: absolute;
+        top: 132px;
+        left: 400px;
+        bottom: 200px;
+        right: 0px;
+
+      }
+      #tableContainer2 {
+        display: table;
+        position: absolute;
+        top: 290px;
+        left: 390px;
+      }
+      .tableRow {
+        display: table-row;
+        border: 1px solid black;
+      }
+      td {
+        display: table-cell;
+      }
+      .tableCell {
+        width: 30px;
+        height: 32px;
+        border-bottom: 4px solid black;
+        margin-right: 8px;
+        font-size: 20pt;
+        text-align: center;
+      }
+      .blankCell {
+        column-width: 30px;
+        border-spacing: 10px;
+        height: 25px;
+      }
+      .alphabet {
+        border: 1px solid black;
+        padding: 16px;
+        background-color: lightblue;
+        border-radius: 6pt;
+        font-size: 20pt;
+      }
+      td:hover {
+        background-color: darkgrey;
+      }
+      .buttons {
+        position: relative;
+        top: 30px;
+        height: 52px;
+        width: 215px;
+        background-color: lightblue;
+        border-radius: 12pt;
+        font-size: 20pt;
+      }
+      #button {
+        height: 30px;
+        width: 112px;
+        border-radius: 12pt;
+        font-size: 12pt;
+        border-style: solid;
+        background-color: lightblue;
+      }
+      #form {
+        width: 390px;
+        height: 23px;
+        border-style: solid;
+      }
+      td:visited {
+        background-color: blue;
+      }
+      #messageArea {
+        padding-top: 10px;
+        font-size: 35px;
+        color: blue;
+        font-family: serif;
+        text-align: center;
+      }
+      #welcome {
+        text-align: center;
+      }
+      #multiPage{
+        text-align: center;
+      }
+      #lowerTable {
+        text-align: center;
+      }
+    </style>
+  </head>
+    <body>
+  <div id="welcome">
+    <h1>Welcome to Hangwoman</h1><br><br><br><br><br>
+    <h3>Select single player to have a phrase chosen for you</h3>
+    <h3>Select Multiplayer to enter your own phrase</h3>
+    <button id="singleButton" class = "buttons">Single Player</button>
+    <button id="multiButton" class="buttons" onclick="View.multiPage()">Multi Player</button>
+  </div>
+  <div id="multiPage">
+    <h1>Multi Player</h1>
+    <br><br><br>
+    <h3 id="enterPhrase">Enter a word or phrase below. Do not use punctuation.</h3>
+      <input type="text" id="form" placeholder="Enter word or phrase here" value="">
+      <input type="button" id="button" value="Submit" name="Submit">
+  </div>
+  <div id="game">
+    <h1>Hangwoman</h1>
+    <div id="messageArea"></div>
+    <div id="tableContainer1">
+      <table id="table1">
+        <tr id="firstTR">
+        </tr>
+      </table>
+    </div>
+
+    <div id="tableContainer2">
+      <table id="lowerTable">
+        <tr id="alpha">
+          <td class="alphabet" id="a">A</td>
+          <td class="alphabet" id="b">B</td>
+          <td class="alphabet" id="c">C</td>
+          <td class="alphabet" id="d">D</td>
+          <td class="alphabet" id="e">E</td>
+          <td class="alphabet" id="f">F</td>
+          <td class="alphabet" id="g">G</td>
+          <td class="alphabet" id="h">H</td>
+        </tr>
+        <tr>
+          <td class="alphabet" id="i">I</td>
+          <td class="alphabet" id="j">J</td>
+          <td class="alphabet" id="k">K</td>
+          <td class="alphabet" id="l">L</td>
+          <td class="alphabet" id="m">M</td>
+          <td class="alphabet" id="n">N</td>
+          <td class="alphabet" id="o">O</td>
+          <td class="alphabet" id="p">P</td>
+        </tr>
+        <tr>
+          <td class="alphabet" id="q">Q</td>
+          <td class="alphabet" id="r">R</td>
+          <td class="alphabet" id="s">S</td>
+          <td class="alphabet" id="t">T</td>
+          <td class="alphabet" id="u">U</td>
+          <td class="alphabet" id="v">V</td>
+          <td class="alphabet" id="w">W</td>
+          <td class="alphabet" id="x">X</td>
+        </tr>
+        <tr>
+          <td class="alphabet" id="y">Y</td>
+          <td class="alphabet" id="z">Z</td>
+        </tr>
+      </table>
+    </div>
+    <canvas id="canvas" width="350" height="550"></canvas>
+  </div>
+    
+  </body>
+</html>
