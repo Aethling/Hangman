@@ -145,8 +145,8 @@ var Model = {
 			Model.thePhrase = phrase;
 		},
 		randomPhrase: function () { //returns a random phrase
-			var phrases = ["you only live once", "post hoc ergo propter hoc", "make my day", "vini vidi vici", "go to hell", "lo how a rose eer blooming",
-			"where the wild things are", "quod erat demonstrandum", "happy birthday", "to be or not to be", "this is a really really long long long long long long long long long long phrase"];
+			var phrases = ["you only live once", "post hoc ergo propter hoc", "little boy blue", "vini vidi vici", "lo how a rose eer blooming",
+			"where the wild things are", "quod erat demonstrandum", "happy birthday", "to be or not to be", "How you like them apples"];
 			var randomNum = Math.floor(Math.random() * phrases.length);
 			var phrase = phrases[randomNum];
 			View.render(phrase);
